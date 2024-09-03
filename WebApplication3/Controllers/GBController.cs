@@ -26,7 +26,11 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public ActionResult Create(GuestBookCreateVm model)
         {
-            return View();
+            if (ModelState.IsValid) return View(model);
+
+            //CREATE RECORD
+
+            return RedirectToAction("Index");
         }
 
         private List<GuestBookVm> GetData()

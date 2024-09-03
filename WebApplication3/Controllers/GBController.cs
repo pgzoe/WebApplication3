@@ -59,6 +59,17 @@ namespace WebApplication3.Controllers
             
         }
 
+        public ActionResult Create2()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create2(GuestBookCreateVm model, HttpPostedFileBase FileName)
+        {
+            return View();
+        }
+
         private List<GuestBookVm> GetData()
         {
             return new AppDbContext().GuestBooks

@@ -314,6 +314,7 @@
     <Content Include="Views\GuestBooks\Confirm.cshtml" />
     <Content Include="Views\GB\Index.cshtml" />
     <Content Include="Views\GB\Create.cshtml" />
+    <Content Include="Views\GB\Create2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,5 +29,8 @@ namespace WebApplication3.Models.ViewModels
         [StringLength(200, ErrorMessage = "{0}長度不可大於{1}")]
         public string Message { get; set; }
 
+        [Display(Name = "附件")]
+        public string FileName { get; set; }    
+
     }
 }

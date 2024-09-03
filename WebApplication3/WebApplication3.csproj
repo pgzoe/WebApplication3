@@ -312,10 +312,10 @@
     <Content Include="Views\GuestBooks\Edit.cshtml" />
     <Content Include="Views\GuestBooks\Index.cshtml" />
     <Content Include="Views\GuestBooks\Confirm.cshtml" />
+    <Content Include="Views\GB\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GB\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

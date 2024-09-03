@@ -7,8 +7,8 @@ namespace WebApplication3.Models.ViewModels
         public int Id { get; set; }
 
         [Display(Name = "姓名")]
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage ="姓名必填")]
+        [StringLength(50,ErrorMessage ="姓名長度不可大於50")]
         public string Name { get; set; }
 
         [Display(Name = "電子郵件")]

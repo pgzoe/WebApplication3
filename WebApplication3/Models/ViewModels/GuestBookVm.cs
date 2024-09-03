@@ -17,6 +17,8 @@ namespace WebApplication3.Models.ViewModels
         public string Email { get; set; }
 
         [Display(Name = "留言時間")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm:ss}")]
+
         public DateTime CreateTime { get; set; }
     }
 }

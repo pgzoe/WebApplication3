@@ -29,8 +29,29 @@ namespace WebApplication3.Controllers
             if (ModelState.IsValid) return View(model);
 
             //CREATE RECORD
+            var entity = new GuestBook()
+            {
+                Name = model.Name,
+                Email = model.Email,
+                Message = model.Message,
+                CellPhone = model.CellPhone,
+                CreateTime = DateTime.Now,
+            };
 
-            return RedirectToAction("Index");
+            try
+            {
+                var db = new AppDbContext();
+                db.GuestBooks.Add(entity);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(model);
+            }
+            
         }
 
         private List<GuestBookVm> GetData()

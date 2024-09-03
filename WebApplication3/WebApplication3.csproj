@@ -153,6 +153,8 @@
     <Compile Include="Models\MemberVm.cs" />
     <Compile Include="Models\Repositories\CategoryRepository.cs" />
     <Compile Include="Models\Services\CategoryService.cs" />
+    <Compile Include="Models\ViewModels\GuestBookCreateVm.cs" />
+    <Compile Include="Models\ViewModels\GuestBookVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

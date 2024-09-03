@@ -52,9 +52,17 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    DoCreate(category);
+                    return RedirectToAction("Index");
+                }
+                catch(Exception ex)
+                {
+                    ModelState.AddModelError("",ex.Message);
+                }
+                
+                
             }
 
             return View(category);

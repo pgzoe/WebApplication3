@@ -18,6 +18,17 @@ namespace WebApplication3.Controllers
             return View(data);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(GuestBookCreateVm model)
+        {
+            return View();
+        }
+
         private List<GuestBookVm> GetData()
         {
             return new AppDbContext().GuestBooks

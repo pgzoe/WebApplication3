@@ -10,14 +10,13 @@ namespace WebApplication3.Models.ViewModels
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Display(Name="姓名")]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(254)]
+        [Display(Name = "電子郵件")]
         public string Email { get; set; }
 
+        [Display(Name = "留言時間")]
         public DateTime CreateTime { get; set; }
     }
 }

@@ -75,8 +75,15 @@ namespace WebApplication3.Controllers
             model.FileName = newFileName;
 
             //建立一筆紀錄
+            DoCreate2(model);
 
             return RedirectToAction("Index");
+        }
+
+        private void DoCreate2(GuestBookCreateVm model)
+        {
+            //利用Dapper
+            //todo
         }
 
         private string SaveFile(HttpPostedFileBase file, string path)

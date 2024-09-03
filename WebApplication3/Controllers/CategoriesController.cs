@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication3.Models.DTOs;
 using WebApplication3.Models.EFModels;
+using WebApplication3.Models.Services;
 
 namespace WebApplication3.Controllers
 {
@@ -56,6 +58,12 @@ namespace WebApplication3.Controllers
             }
 
             return View(category);
+        }
+
+        private void DoCreate(Category category)
+        {
+            var dto=category.ToDto();
+            new CategoryService().Create(dto);
         }
 
         // GET: Categories/Edit/5

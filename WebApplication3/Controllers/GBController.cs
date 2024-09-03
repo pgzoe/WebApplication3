@@ -67,7 +67,13 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public ActionResult Create2(GuestBookCreateVm model, HttpPostedFileBase FileName)
         {
-            return View();
+            //將FileName存檔，如果有上傳的話
+
+            //將檔名傳給 model.FileName
+
+            //建立一筆紀錄
+
+            return RedirectToAction("Index");
         }
 
         private List<GuestBookVm> GetData()

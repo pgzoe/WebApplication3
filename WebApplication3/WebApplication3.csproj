@@ -313,6 +313,7 @@
     <Content Include="Views\GuestBooks\Index.cshtml" />
     <Content Include="Views\GuestBooks\Confirm.cshtml" />
     <Content Include="Views\GB\Index.cshtml" />
+    <Content Include="Views\GB\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

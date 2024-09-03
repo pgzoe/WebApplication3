@@ -91,12 +91,19 @@ namespace WebApplication3.Controllers
             //驗證檔案大小
 
             //取得檔名(必須更名???)
+            string ext = System.IO.Path.GetExtension(file.FileName); // 取得".jpg"
+                                                                     //88888888-4444-4444-4444-11111
+                                                                     //8888888844444444444411111
+            string newFileName = Guid.NewGuid().ToString("N") + ext; //新的檔名
 
             //組合出完整的路徑
+            string fullPath = System.IO.Path.Combine(path, newFileName);
 
             //存檔
+            file.SaveAs(fullPath);
 
             //回傳最後的檔名
+            return newFileName;
         }
 
         private List<GuestBookVm> GetData()

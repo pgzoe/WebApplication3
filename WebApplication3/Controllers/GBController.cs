@@ -68,12 +68,35 @@ namespace WebApplication3.Controllers
         public ActionResult Create2(GuestBookCreateVm model, HttpPostedFileBase FileName)
         {
             //將FileName存檔，如果有上傳的話
+            string path = Server.MapPath("/Uploads"); //取得 uploads 真實的完整路徑
+            string newFileName = SaveFile(FileName, path); //若沒上傳，回傳null
 
             //將檔名傳給 model.FileName
+            model.FileName = newFileName;
 
             //建立一筆紀錄
 
             return RedirectToAction("Index");
+        }
+
+        private string SaveFile(HttpPostedFileBase file, string path)
+        {
+            //如果沒有檔案或是長度為0回傳null
+            if (file == null || file.ContentLength == 0) return null;
+
+            //驗證副檔名看類型是不是允許的
+
+            //驗證圖片尺寸(如果是圖片的話)
+
+            //驗證檔案大小
+
+            //取得檔名(必須更名???)
+
+            //組合出完整的路徑
+
+            //存檔
+
+            //回傳最後的檔名
         }
 
         private List<GuestBookVm> GetData()

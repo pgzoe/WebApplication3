@@ -48,6 +48,11 @@ namespace WebApplication3.Controllers
             }
             catch (Exception ex)
             {
+                Exception ex2 = ex;
+                while (ex2.InnerException != null)
+                {
+                    ex2= ex2.InnerException;
+                }
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return View(model);
             }

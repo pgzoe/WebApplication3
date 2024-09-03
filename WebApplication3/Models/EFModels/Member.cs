@@ -6,23 +6,33 @@ namespace WebApplication3.Models.EFModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Category
+    public partial class Member
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public Member()
         {
-            Products = new HashSet<Product>();
+            Orders = new HashSet<Order>();
         }
 
         public int Id { get; set; }
 
         [Required]
-        [StringLength(30)]
+        [StringLength(50)]
+        public string Account { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Password { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string Name { get; set; }
 
-        public int DisplayOrder { get; set; }
+        [Required]
+        [StringLength(250)]
+        public string Email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -78,7 +78,7 @@ namespace WebApplication3.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,DisplayOrder")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,Name,DisplayOrder")] Category category) //Model Binding:當表單資料送到會自動配對
         {
             if (ModelState.IsValid)
             {

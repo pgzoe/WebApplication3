@@ -8,6 +8,12 @@ namespace WebApplication3.Models.EFModels
 
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            Shippings = new HashSet<Shipping>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -29,5 +35,10 @@ namespace WebApplication3.Models.EFModels
         public bool Enabled { get; set; }
 
         public int FunctionId { get; set; }
+
+        public virtual Function Function { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shipping> Shippings { get; set; }
     }
 }
